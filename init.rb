@@ -5,12 +5,12 @@
 # modify it under the terms of the GNU General Public License
 # as published by the Free Software Foundation; either version 2
 # of the License, or (at your option) any later version.
-# 
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
-# 
+#
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
@@ -21,9 +21,13 @@ Rails.logger.info 'Starting Tab plugin for Redmine'
 
 Redmine::Plugin.register :redmine_tab do
   name 'Tab Plugin'
-  author 'James Turnbull'
-  description 'A plugin which adds Redmine tabs to embed content from an iframe on a per-project and system-wide base.'
-  version '0.4.0'
+  author 'James Turnbull (orig)'
+  author_url 'https://github.com/tools-aoeur'
+  description 'Adds Redmine tabs to embed content from an iframe on a per-project and system-wide base.'
+  url 'https://github.com/tools-aoeur/redmine_tab.git'
+  version '1.0.0'
+
+  requires_redmine version_or_higher: '5.0'
 
   settings :default => {
     'tab_text' => '',
@@ -46,8 +50,6 @@ Redmine::Plugin.register :redmine_tab do
     string = Setting.plugin_redmine_tab[setting_name]
     if !string.blank? && string.match(/\A:/) # uses symbol syntax, :string
       string.gsub!(':','')
-      string = GLoc.l(string.to_sym) if Object.const_defined?('GLoc') # Rails 2.1.x
-      string = I18n.t(string.to_sym) if Object.const_defined?('I18n') # Rails 2.2.x
     end
     string
   }
