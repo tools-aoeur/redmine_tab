@@ -1,5 +1,5 @@
 pt:
   tab_text_project_specific: Projeto específico
-  tab_text_systemwide: Todo Sistema
-  tab_label_tab_name: Nome da Aba
-  tab_label_tab_text: Texto da Aba
+  tab_text_systemwide: Todo sistema
+  tab_label_tab_name: Nome da aba
+  tab_label_tab_text: Texto da aba ou iframe
