@@ -18,11 +18,10 @@
 # MA 02110-1301, USA.
 
 class TabController < ApplicationController
-  unloadable
 
   layout 'base'
 
-  before_action :find_project, :authorize, :only => [:show]
+  before_action :find_project, :authorize, only: [:show]
 
   def show
     @tab_text = Tab.get_tab_text(@project)
@@ -30,7 +29,7 @@ class TabController < ApplicationController
 
   def system_show
     @tab_text = Setting.plugin_redmine_tab['system_tab_text']
-    render :action => 'show'
+    render action: 'show'
   end
 
   private

@@ -6,10 +6,6 @@ A Redmine plugin which adds new Redmine tabs to embed content from an iframe on 
 
 * James Turnbull
 
-==Latest release
-
-The currently available, latest release of the plugin is version <b>0.4.0</b>.
-
 ==Changelog
 
 For the complete changelog see the <tt>CHANGELOG</tt> file in the Tab plugin directory.
@@ -23,15 +19,15 @@ Besides these two features it also allows you to modify the actual tab and link 
 
 ==Compatibility
 
-This plugin is compatible with Redmine 0.8.x as well as with the Redmine trunk.
+This plugin is compatible with Redmine 6.1.x
 
-==Obtaining 
+==Obtaining
 
-<i>URL of the GitHub repository: http://github.com/jamtur01/redmine_tab/tree/master</i>
+<i>URL of the GitHub repository: https://github.com/tools-aoeur/redmine_tab/tree/redmine-6.1</i>
 
 The source of this plugin can be "cloned" from the GitHub-repo using:
 
-  $ cd {REDMINE_ROOT}/vendor/plugins && git clone git://github.com/jamtur01/redmine_tab.git
+  $ cd {REDMINE_ROOT}/vendor/plugins && git clone https://github.com/tools-aoeur/redmine_tab.git
 
 ==Installation
 

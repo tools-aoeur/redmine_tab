@@ -17,17 +17,15 @@
 
 require 'redmine'
 
-Rails.logger.info 'Starting Tab plugin for Redmine'
-
 Redmine::Plugin.register :redmine_tab do
   name 'Tab Plugin'
   author 'James Turnbull (orig)'
   author_url 'https://github.com/tools-aoeur'
-  description 'Adds Redmine tabs to embed content from an iframe on a per-project and system-wide base.'
+  description 'Add tabs to Redmine to embed content from an iframe on a per-project and system-wide base.'
   url 'https://github.com/tools-aoeur/redmine_tab.git'
-  version '1.0.0'
+  version '6.1.0'
 
-  requires_redmine version_or_higher: '5.0'
+  requires_redmine version_or_higher: '6.1'
 
   settings :default => {
     'tab_text' => '',
@@ -58,13 +56,13 @@ Redmine::Plugin.register :redmine_tab do
   menu(:project_menu,
        :tab,
        { :controller => 'tab', :action => 'show' },
-       :caption => Proc.new { string_or_translate.call('tab_name') },
-       :if => Proc.new { !Setting.plugin_redmine_tab['tab_name'].blank? })
+       :caption => proc { string_or_translate.call('tab_name') },
+       :if => proc { !Setting.plugin_redmine_tab['tab_name'].blank? })
 
   # A new item is added to the top menu
   menu(:top_menu,
        :tab,
        { :controller => 'tab', :action => 'system_show' },
-       :caption => Proc.new { string_or_translate.call('system_tab_name') },
-       :if => Proc.new { !Setting.plugin_redmine_tab['system_tab_name'].blank? })
+       :caption => proc { string_or_translate.call('system_tab_name') },
+       :if => proc { !Setting.plugin_redmine_tab['system_tab_name'].blank? })
 end
